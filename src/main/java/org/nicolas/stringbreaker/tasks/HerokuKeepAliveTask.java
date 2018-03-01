@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 public class HerokuKeepAliveTask {
-    @Scheduled(cron = "00,15,30,45 8-18 * * 1-5")
+    @Scheduled(cron = "0 0,15,30,45 8-18 * * 1-5")
     public void keepAlive() {
         try {
             Unirest.get("https://stringbreaker.herokuapp.com").asString();
